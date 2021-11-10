@@ -1,0 +1,4 @@
+gesdinet_jwt_refresh_token:
+    ttl: 10800              # valor en segundo: 3 días
+    single_use: true
+    user_provider: App\Security\UserProvider

@@ -1,0 +1,26 @@
+skin-black .wrapper, .skin-black .main-sidebar, .skin-black .left-side {
+    background-color: $sidebar-color;
+}
+
+.skin-black .sidebar a {
+    color: #d3d3d3;
+}
+
+.skin-black .sidebar-menu>li:hover>a, .skin-black .sidebar-menu>li.active>a {
+    color: #fff;
+    background: $sidebar-menu-selected;
+    border-left-color: #fff;
+}
+
+.menu-separador {
+    border-top: 1px solid $sidebar-menu-separator;
+    padding-top: 10px
+}
+
+.skin-black .sidebar-menu>li>.treeview-menu {
+    background: $sidebar-menu-children;
+}
+
+.skin-black .treeview-menu>li>a {
+    color: #d3d3d3;
+}

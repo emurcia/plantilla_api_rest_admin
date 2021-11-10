@@ -1,0 +1,6 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    paths:
+        '%kernel.project_dir%/assets/styles': styles
+    globals:
+        wkhtml_base_url: '%env(resolve:WKHTML_BASE_URL)%'

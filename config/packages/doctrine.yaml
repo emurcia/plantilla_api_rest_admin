@@ -1,0 +1,23 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        dql:
+            string_functions:
+                concat_ws:  App\Dql\ConcatWs
+                unaccent:   App\Dql\Unaccent
+                array_agg:  App\Dql\ArrayAgg
+                cast:       App\Dql\Cast
+                soundexesp: App\Dql\Soundexesp
+                like_all:   App\Dql\LikeAll
+                regex:      App\Dql\Regex
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App

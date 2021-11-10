@@ -1,0 +1,38 @@
+{% extends '@!SonataAdmin/standard_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ encore_entry_link_tags('app') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+
+{% block sonata_sidebar_search %}
+{% endblock %}
+
+{#- Cambiando color al separador del menu -#}
+{% block side_bar_after_nav %}
+    <p class="text-center small menu-separador">
+        {% block side_bar_after_nav_content %}
+        {% endblock %}
+    </p>
+{% endblock %}
+
+{#- Modificacon del logo -#}
+{% block logo %}
+    {% apply spaceless %}
+        <a class="logo" href="{{ path('sonata_admin_dashboard') }}">
+            {% if 'single_image' == sonata_admin.adminPool.getOption('title_mode') or 'both' == sonata_admin.adminPool.getOption('title_mode') %}
+                <img src="{{ asset('build/images/web-logo-white.png') }}" alt="{{ sonata_admin.adminPool.title }}">
+            {% endif %}
+            {% if 'single_text' == sonata_admin.adminPool.getOption('title_mode') or 'both' == sonata_admin.adminPool.getOption('title_mode') %}
+                <span>{{ sonata_admin.adminPool.title }}</span>
+            {% endif %}
+        </a>
+    {% endapply %}
+{% endblock %}

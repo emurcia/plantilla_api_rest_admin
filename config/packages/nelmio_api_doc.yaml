@@ -1,0 +1,18 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Plantilla API - REST
+            description: Plantilla para desarrollo de servicios web.
+            version: 1.0.0
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+                    description: 'Authorization: Bearer {JWT}'
+        security:
+            - Bearer: []
+    areas:
+        path_patterns:
+            - ^/api(?!(/doc|/token/refresh))

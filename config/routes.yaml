@@ -1,0 +1,10 @@
+homepage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        path: /admin
+        permanent: true
+
+# lexik/jwt-authentication-bundle
+api_login_check:
+    path: /api/login_check

@@ -1,0 +1,18 @@
+{# templates/bundles/NelmioApiDocBundle/SwaggerUi/index.html.twig #}
+
+{#
+    To avoid a "reached nested level" error an exclamation mark `!` has to be added
+    See https://symfony.com/blog/new-in-symfony-3-4-improved-the-overriding-of-templates
+#}
+{% extends '@!NelmioApiDoc/SwaggerUi/index.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ encore_entry_link_tags('nelmio_api_doc') }}
+{% endblock stylesheets %}
+
+{% block header %}
+    <a id="logo-minsal" href="{{ path('app.swagger_ui') }}"><img src="{{ asset('build/images/api-minsal-white.png') }}" alt="Minsal"></a>
+    <a id="logo" href="{{ path('app.swagger_ui') }}"><img src="{{ asset('build/images/api-logo.png') }}" alt="My API"></a>
+{% endblock header %}

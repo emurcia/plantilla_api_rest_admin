@@ -1,0 +1,18 @@
+{% extends '@SonataAdmin/CRUD/edit.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {{ encore_entry_link_tags('user_edit') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('user_edit') }}
+{% endblock %}
+
+{% block sonata_tab_content %}
+    <div id="js-admin" data-uniqid="{{ admin.uniqid }}"></div>
+    {{ parent() }}
+{% endblock %}

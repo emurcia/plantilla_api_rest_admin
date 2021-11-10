@@ -1,0 +1,62 @@
+# Login
+Authentication: Autenticación
+Login         : Iniciar sesión
+
+# Plantilla
+Logout : Cerrar Sesión
+Profile: Perfil
+Action : Acción
+switch_user_exit: 'Terminar suplantación'
+
+# Menú
+users: Usuarios
+roles: Roles
+MntPerfilAdmin: Perfiles
+
+# User Admin
+# Breadcum
+User List  : Listado de usuarios
+User Create: Creación de usuario
+# Tabs y box
+Users   : Usuarios
+User    : Usuario
+Admin   : Administración
+Security: Seguridad
+# Labels
+Email          : Correo electrónico
+Last Login     : Última conexión
+Is Suspended   : Deshabilitado
+Created At     : Fecha creación
+Plain Password : Contraseña
+Uroles         : Roles
+New password   : Nueva contraseña
+Repeat new password: Repetir nueva contraseña
+Uri : URI
+Profiles : Perfiles
+# Role Admin
+# Breadcum
+Role List: Listado de Roles
+Role Create: Creación de rol
+# Labels
+Name: Nombre
+# Tabs y box
+Roles: Roles
+
+# PerfilAdmin
+# breadcrumb
+Mnt Perfil List: Lista de Perfiles
+Mnt Perfil Create: Crear Perfil
+Perfil Roles: Roles
+Mnt Perfil Admin: Perfiles
+
+# Ruta Admin
+# breadcrumb
+Ruta Item : Ruta
+Mnt Ruta List : Listado de rutas
+Mnt Ruta Create : Crear Entrada de Menú
+MntRutaAdmin : Rutas
+Mnt Ruta Admin: Rutas
+#labels
+Icono: Ícono
+Mostrar: Mostrar
+Orden: Orden

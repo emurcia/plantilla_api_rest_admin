@@ -1,0 +1,38 @@
+{% block user_block %}
+    {% if app.user %}
+        {% set _bg_class          = "bg-light-blue" %}
+        {% set _logout_uri        = path('admin_logout') %}
+        {% set _logout_text       = 'Logout'|trans %}
+        {% set _profile_uri       = ( is_granted('ROLE_SUPER_ADMIN') or is_granted('ROLE_ADMIN_USER_EDIT') ) ? path('admin_app_user_edit', {id: app.user.id}) : path('admin_app_user_show', {id: app.user.id}) %}
+        {% set _profile_text      = 'Profile'|trans %}
+        {# Customize this with your profile picture implementation, see below for example #}
+        {#{% set _user_image  = app.user.profilePicture|default(asset(sonata_user.defaultAvatar)) %}#}
+
+        {% if is_granted('IS_IMPERSONATOR') and is_granted('ROLE_ALLOWED_TO_SWITCH') %}
+            {% set _bg_class    = "bg-light-green" %}
+            {% set _logout_uri  = path('sonata_admin_dashboard', {'_switch_user': '_exit'}) %}
+            {% set _logout_text = 'switch_user_exit'|trans %}
+        {% endif %}
+
+        <li class="user-header {{ _bg_class }}">
+            {# {% if _user_image %}
+                <img src="{{ _user_image }}" class="img-circle" alt="Avatar" />
+            {% endif %} #}
+            <p>{{ app.user }}</p>
+        </li>
+
+        {# Uncomment to add some information
+        <li class="user-body"></li>
+        #}
+
+        <li class="user-footer">
+            <div class="pull-left">
+                <a href="{{ _profile_uri }}" class="btn btn-default btn-flat"><i class="fa fa-user"></i> {{ _profile_text }}</a>
+            </div>
+
+            <div class="pull-right">
+                <a href="{{ _logout_uri }}" class="btn btn-default btn-flat"><i class="fa fa-sign-out fa-fw"></i> {{ _logout_text }}</a>
+            </div>
+        </li>
+    {% endif %}
+{% endblock %}

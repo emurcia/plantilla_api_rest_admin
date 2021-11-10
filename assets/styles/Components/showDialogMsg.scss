@@ -1,0 +1,99 @@
+div#dialog-message p {
+    line-height: 18px !important;
+}
+
+.dialog-warning > .ui-dialog-titlebar, .dialog-warning > .ui-widget-header {
+    background: #fcf8e3 !important;
+    border-color: #fbeed5 !important;
+    color: #c09853 !important;
+}
+
+.dialog-warning button {
+    color: #c09853 !important;
+    background: #fcf8e3 !important;
+    border: 1px solid #fbeed5 !important;
+    border-radius: 5px !important;
+}
+
+.dialog-warning button:focus, .dialog-warning button:active, .dialog-warning button:hover {
+    border: 1px solid #c09853 !important;
+}
+
+.dialog-warning .ui-dialog-content {
+    color: #c09853 !important;
+}
+
+.dialog-error > .ui-dialog-titlebar, .dialog-error > .ui-widget-header {
+    background: #f2dede !important;
+    border-color: #eed3d7 !important;
+    color: #b94a48 !important;
+}
+
+.dialog-error button {
+    color: #b94a48 !important;
+    background: #f2dede !important;
+    border: 1px solid #eed3d7 !important;
+    border-radius: 5px !important;
+}
+
+.dialog-error button:focus, .dialog-error button:active, .dialog-error button:hover {
+    border: 1px solid #b94a48 !important;
+}
+
+.dialog-error .ui-dialog-content {
+    color: #b94a48 !important;
+}
+
+.dialog-info > .ui-dialog-titlebar, .dialog-info > .ui-widget-header {
+    background: #d9edf7 !important;
+    border-color: #bce8f1 !important;
+    color: #3a87ad !important;
+}
+
+.dialog-info button {
+    color: #3a87ad !important;
+    background: #d9edf7 !important;
+    border: 1px solid #bce8f1 !important;
+    border-radius: 5px !important;
+}
+
+.dialog-info button:focus, .dialog-info button:active, .dialog-info button:hover {
+    border: 1px solid #3a87ad !important;
+}
+
+.dialog-info .ui-dialog-content {
+    color: #3a87ad !important;
+}
+
+.dialog-success > .ui-dialog-titlebar, .dialog-success > .ui-widget-header {
+    background: #dff0d8 !important;
+    border-color: #d6e9c6 !important;
+    color: #468847 !important;
+}
+
+.dialog-success button {
+    color: #468847 !important;
+    background: #dff0d8 !important;
+    border: 1px solid #d6e9c6 !important;
+    border-radius: 5px !important;
+}
+
+.dialog-success button:focus, .dialog-success button:active, .dialog-success button:hover {
+    border: 1px solid #468847 !important;
+}
+
+.dialog-success .ui-dialog-content {
+    color: #468847 !important;
+}
+
+.ui-front {
+    z-index: 1050;
+}
+
+div.no-titulo div.box-primary{
+    border-top: none;
+    box-shadow: none;
+}
+div.no-titulo div.box-header{
+    display: none;
+}

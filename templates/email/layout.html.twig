@@ -1,0 +1,39 @@
+<div style="width:100%; margin-left:auto; margin-right:auto;">
+    <tbody style="border-collapse: collapse;">
+        <tr>
+            <td>
+            {% block logo %}
+                <div style="background-color:#FAFAFA;text-align:center;">
+                    <img alt="MNSAL" width="600" height="95" src="https://next.salud.gob.sv/index.php/s/kA5i5rKsBP5HQoj/download">
+                </div>
+            {% endblock %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {% block head %}
+                {% endblock %}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="width:100%;background-color: #F9F9F9;">
+                    <center>
+                        {% block body %}
+                        {% endblock %}
+                    </center>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {% block footer %}
+                    <div style="color:#E6E6E6;background-color:#424242;padding: 10px 10px 10px 15px;font-weight:bold;font-size:12px;text-align:center;font-family:sans-serif,arial;">
+                        SISTEMA.<br />
+                        INSTITUCION
+                    </div>
+                {% endblock %}
+            </td>
+        </tr>
+    </tbody>​
+</div>

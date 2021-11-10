@@ -1,0 +1,171 @@
+{% extends '@SonataAdmin/standard_layout.html.twig' %}
+
+{% block sonata_nav %}
+{% endblock sonata_nav %}
+
+{% block logo %}
+{% endblock logo %}
+
+{% block sonata_left_side %}
+{% endblock sonata_left_side %}
+
+{% block body_attributes %}class="sonata-bc login-page"{% endblock %}
+
+{% block sonata_wrapper %}
+
+    <div class="login-box">
+        {% block login_box_header %}
+            <div class="login-logo">
+                <a href="{{ path('sonata_admin_dashboard') }}">
+                    {% if sonata_admin.adminPool.getOption('title_mode') in ['single_image', 'both'] %}
+                        <div>
+                            <img src="{{ asset(sonata_admin.adminPool.titlelogo) }}" alt="{{ sonata_admin.adminPool.title }}">
+                        </div>
+                    {% endif %}
+                    {% if sonata_admin.adminPool.getOption('title_mode') in ['single_text', 'both'] %}
+                        <span>{{ sonata_admin.adminPool.title }}</span>
+                    {% endif %}
+                </a>
+            </div>
+        {% endblock %}
+        <div class="login-box-body">
+            {% block sonata_user_login_form %}
+                {% block sonata_user_login_error %}
+                    {% if error %}
+                        <div class="alert alert-danger alert-error">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+                {% for label, flashes in app.session.flashbag.all %}
+                    {% for flash in flashes %}
+                        <div class="alert alert-{{ label }}">
+                            {{ flash }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                <p class="login-box-msg">{{ 'Authentication'|trans({}, 'security') }}</p>
+                {#{% if qrCodeUrl is defined %}
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p align="middle"> <img src="{{ qrCodeUrl }}" alt="QR-code"></p>
+                            <p align="middle">{{ 'qr_code_secret'|trans({}, 'SonataUserBundle') }}: {{ qrSecret }}</p>
+                            <p align="middle">
+                                <a href="{{ path('sonata_admin_dashboard') }}">{{ 'qr_go_next'|trans({}, 'SonataUserBundle') }}</a>
+                            </p>
+                        </div>
+                    </div>
+                {% elseif two_step_submit|default(false) %}
+                    <form method="POST" role="form">
+                        {% if state == 'error' %}
+                            <div class="alert alert-error">{{ 'label_two_step_code_error'|trans({}, 'SonataUserBundle') }}</div>
+                        {% endif %}
+                        <label for="_code">{{ 'label_two_step_code'|trans({}, 'SonataUserBundle') }}</label>
+                        <div class="input-group input-group-lg">
+                            <input type="text" class="form-control" id="_code" name="_code" autocomplete='off' />
+                            <span class="input-group-btn">
+                                <input class="btn btn-primary"
+                                    id="_submit"
+                                    name="_submit"
+                                    type="submit"
+                                    value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+                            </span>
+                        </div>
+                        <span class="help-block sonata-ba-field-help">{{ 'message_two_step_code_help'|trans({}, 'SonataUserBundle') }}</span>
+                    </form>
+                {% else %}#}
+                    <form action="{{ path("admin_login") }}" method="post" role="form">
+                        <input type="hidden" name="{{ form._token.vars.full_name }}" value="{{ csrf_token('authenticate') }}"/>
+
+                        <div class="form-group has-feedback">
+                            <input class="form-control"
+                                id="username"
+                                name="{{ form.email.vars.full_name }}"
+                                placeholder="{{ 'Username or email'|trans({}, 'security') }}"
+                                required="required"
+                                type="text"
+                                value="{{ last_username }}"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                        </div>
+
+                        <div class="form-group has-feedback">
+                            <input class="form-control"
+                                id="password"
+                                name="{{ form.password.vars.full_name }}"
+                                placeholder="{{ 'Password'|trans({}, 'security') }}"
+                                required="required"
+                                type="password"/>
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+
+                        <div class="row">
+                            {# See https://symfony.com/doc/current/security/remember_me.html #}
+                            {# <div class="col-xs-8">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                                        {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                                    </label>
+                                </div>
+                            </div> #}
+                            <div class="col-xs-4">
+                                <button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'Login'|trans({}, 'security') }}</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    {# <a href="{{ reset_route }}">{{ 'forgotten_password'|trans({}, 'SonataUserBundle') }}</a> #}
+                {# {% endif %} #}
+            {% endblock %}
+        </div>
+    </div>
+
+{% endblock sonata_wrapper %}
+
+{#{% block sonata_wrapper %}
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="{{ path('sonata_admin_dashboard') }}">
+                <span>Login</span>
+            </a>
+        </div>
+        <div class="login-box-body">
+            {% block sonata_user_login_form %}
+                {% block sonata_user_login_error %}
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+                {% for label, flashes in app.session.flashbag.all %}
+                    {% for flash in flashes %}
+                        <div class="alert alert-{{ label }}">
+                            {{ flash }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                <p class="login-box-msg">{{ 'Authentication'|trans }}</p>
+                <form action="{{ path("admin_login") }}" method="post" role="form">
+                    {{ form_row(form._token) }}
+
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" id="username" name="{{ form.email.vars.full_name }}" value="{{ last_username }}" required="required" placeholder="Email"/>
+                        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    </div>
+
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" id="password" name="{{ form.password.vars.full_name }}" required="required" placeholder="Password"/>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ 'Login'|trans }}</button>
+                        </div>
+                    </div>
+                </form>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock sonata_wrapper %}#}

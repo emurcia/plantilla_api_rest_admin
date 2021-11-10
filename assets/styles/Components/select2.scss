@@ -1,0 +1,21 @@
+div[class^="select2-"][class*="col-lg-"], div[class^="select2-"][class*="col-md-"], div[class^="select2-"][class*="col-sm-"], div[class^="select2-"][class*="col-xs-"] {
+    padding: 0 !important;
+}
+
+.select2-offscreen, .select2-offscreen:focus {
+    left: 50% !important;
+    top: auto !important;
+}
+
+.select2-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.select2-container + select, select.select2-hidden {
+    opacity: 0;
+    height: 1px !important;
+    display: block !important;
+    margin-left: auto;
+    margin-right: auto;
+}

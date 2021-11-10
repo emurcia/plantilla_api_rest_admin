@@ -1,0 +1,31 @@
+{% extends "email/layout.html.twig" %}
+
+{% block head %}
+    <div style="color:#d93025;font-weight:bold;font-family:arial,sans-serif;font-size:20px;padding:20px 10px 5px 15px;border-bottom: 2px solid #d93025; background-color: #fce8e6;">
+        Se ha producido el error {{ code }} en la API de SISTEMA.
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div style="color:#58595b;font-family:arial,sans-serif;font-size:14px;text-align:left;padding: 20px 20px 20px 20px;">
+        <div style="line-height:2em;padding: 0px 0px 0px 20px;">
+            <p style="color:#424242; font-weight: bold;">ESTE ES UN MENSAJE AUTOMÁTICO POR FAVOR NO RESPONDER.</p>
+            <p>Deseamos informarle que ha ocurrido un error con el siguiente detalle:</p>
+            Código: <strong style="color:#d93025; font-size: xx-large;">{{ code }}</strong><br />
+            ID Bitácora: <strong>{{ idBitacora }}</strong><br />
+            Mensaje:<br />
+            <div style="padding: 0px 15px 0 40px;">
+                <b>{{ message }}</b>
+            </div>
+            Línea: <strong>{{ line }}</strong><br />
+            Archivo:<br />
+            <div style="padding: 0px 15px 0 40px;">
+                <strong>{{ file }}</strong><br />
+            </div>
+            Trace:<br />
+            <div style="padding: 0px 15px 0 40px;">
+                {{ trace }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

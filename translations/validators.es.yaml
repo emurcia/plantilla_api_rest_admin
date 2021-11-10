@@ -1,0 +1,9 @@
+# UserAdmin
+Your password must be at least {{ limit }} characters long.: La contraseña debe de contener al menos {{ limit }} caracteres.
+Passwords do not match, please retype: Las contraseñas no coinciden, por favor vuelva a digitarla
+# UserAdmin
+An account already exists for this email: Ya existe una cuenta para este correo electrónico.
+The email has an invalid format!: El el correo electrónico posee un formato no válido
+'The password must have between 8 and 16 characters, at least an uppercase, at least a lowercase, at least a number and at least an special character: $@$!%*?&-_' : 'El password debe de contener mínimo 8 y máximo 16 caracteres, al menos una mayúscula, una miníscula, al menos un número y al menos un caracter especial: $@$!%*?&-_'
+# RoleAdmin
+The role name alredy exists!: El rol ya se encuentra registrado.

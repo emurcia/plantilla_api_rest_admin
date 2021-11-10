@@ -1,0 +1,15 @@
+sonata_admin:
+    global_search:
+        case_sensitive: false
+    show_mosaic_button: false
+    security:
+        handler: sonata.admin.security.handler.role
+    title: 'SISTEMA'
+    title_logo: build/images/web-logo.png
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

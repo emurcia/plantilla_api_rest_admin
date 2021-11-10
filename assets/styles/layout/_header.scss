@@ -1,0 +1,12 @@
+.logo img {
+    max-width: inherit;
+}
+
+.skin-black .main-header>.logo {
+    background-color: $sidebar-color;
+    border-right: 1px solid $sidebar-color;
+}
+
+.skin-black .main-header>.logo:hover {
+    background-color: $sidebar-menu-selected;
+}

@@ -1,0 +1,10 @@
+@import './helper/variables';
+@import './layout/header';
+@import './layout/sidebar';
+@import './Components/callout';
+
+/* AdminLTE override */
+.label-default {
+    background-color: lighten(#111111, 35%) !important;
+}
+/* end AdminLTE*/
